@@ -9,6 +9,11 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 	router := gin.New()
 	router.GET("/", h.HomePage)
 
+	addWordsApi := router.Group("/newWords")
+	{
+		addWordsApi.POST("/classic", h.ClassicAddWords)
+	}
+
 	return router
 
 }

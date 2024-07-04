@@ -9,10 +9,6 @@ import (
 	"github.com/antalkon/English_Words_Game/internal/transport/router"
 	"github.com/antalkon/English_Words_Game/pkg/config"
 	"github.com/antalkon/English_Words_Game/pkg/connectDB"
-	// "github.com/antalkon/ZentasID_go/internal/transport/rest/handler"
-	// "github.com/antalkon/ZentasID_go/internal/transport/rest/router"
-	// "github.com/antalkon/ZentasID_go/pkg/config"
-	// "github.com/antalkon/ZentasID_go/pkg/connectDB"
 )
 
 func Main() {
