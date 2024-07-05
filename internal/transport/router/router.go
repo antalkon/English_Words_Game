@@ -12,6 +12,7 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 	addWordsApi := router.Group("/newWords")
 	{
 		addWordsApi.POST("/classic", h.ClassicAddWords)
+		addWordsApi.POST("/file/txt", h.LoadTxtFile)
 	}
 
 	return router

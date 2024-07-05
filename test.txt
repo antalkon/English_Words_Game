@@ -1,0 +1,4 @@
+word - слово
+mouse - мышь
+hairpods - наушники
+phone - телефон

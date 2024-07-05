@@ -19,3 +19,7 @@ func (h *Handler) HomePage(c *gin.Context) {
 func (h *Handler) ClassicAddWords(c *gin.Context) {
 	addwords.AddClassicWords(c)
 }
+
+func (h *Handler) LoadTxtFile(c *gin.Context) {
+	addwords.LoadTxtFile(c)
+}
