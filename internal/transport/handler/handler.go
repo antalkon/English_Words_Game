@@ -23,3 +23,7 @@ func (h *Handler) ClassicAddWords(c *gin.Context) {
 func (h *Handler) LoadTxtFile(c *gin.Context) {
 	addwords.LoadTxtFile(c)
 }
+
+func (h *Handler) TxtSet(c *gin.Context) {
+	addwords.TxtSet(c)
+}
