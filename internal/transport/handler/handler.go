@@ -2,6 +2,7 @@ package handler
 
 import (
 	addwords "github.com/antalkon/English_Words_Game/internal/services/AddWords"
+	getwords "github.com/antalkon/English_Words_Game/internal/services/getWords"
 	"github.com/antalkon/English_Words_Game/internal/services/pages"
 	"github.com/gin-gonic/gin"
 )
@@ -26,4 +27,8 @@ func (h *Handler) LoadTxtFile(c *gin.Context) {
 
 func (h *Handler) TxtSet(c *gin.Context) {
 	addwords.TxtSet(c)
+}
+
+func (h *Handler) GetClassicWords(c *gin.Context) {
+	getwords.ClassicWords(c)
 }
