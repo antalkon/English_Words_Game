@@ -18,6 +18,7 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 	getWordsApi := router.Group("words")
 	{
 		getWordsApi.POST("/classic", h.GetClassicWords)
+		getWordsApi.POST("/classic/set/:test", h.GetClassicSet)
 	}
 	return router
 

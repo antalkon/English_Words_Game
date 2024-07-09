@@ -32,3 +32,7 @@ func (h *Handler) TxtSet(c *gin.Context) {
 func (h *Handler) GetClassicWords(c *gin.Context) {
 	getwords.ClassicWords(c)
 }
+
+func (h *Handler) GetClassicSet(c *gin.Context) {
+	getwords.ClassicSet(c)
+}
