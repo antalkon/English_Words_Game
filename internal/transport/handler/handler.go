@@ -2,6 +2,7 @@ package handler
 
 import (
 	addwords "github.com/antalkon/English_Words_Game/internal/services/AddWords"
+	delwords "github.com/antalkon/English_Words_Game/internal/services/delWords"
 	getwords "github.com/antalkon/English_Words_Game/internal/services/getWords"
 	"github.com/antalkon/English_Words_Game/internal/services/pages"
 	"github.com/gin-gonic/gin"
@@ -35,4 +36,8 @@ func (h *Handler) GetClassicWords(c *gin.Context) {
 
 func (h *Handler) GetClassicSet(c *gin.Context) {
 	getwords.ClassicSet(c)
+}
+
+func (h *Handler) DelSet(c *gin.Context) {
+	delwords.DelSet(c)
 }
