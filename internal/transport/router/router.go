@@ -12,6 +12,7 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 	addWordsApi := router.Group("/newWords")
 	{
 		addWordsApi.POST("/classic", h.ClassicAddWords)
+		addWordsApi.DELETE("/classic", h.ClassicDelWords)
 		addWordsApi.POST("/file/txt", h.LoadTxtFile)
 		addWordsApi.POST("/set/file/txt", h.TxtSet)
 		addWordsApi.DELETE("/set/file/txt/:id", h.DelSet)

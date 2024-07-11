@@ -41,3 +41,7 @@ func (h *Handler) GetClassicSet(c *gin.Context) {
 func (h *Handler) DelSet(c *gin.Context) {
 	delwords.DelSet(c)
 }
+
+func (h *Handler) ClassicDelWords(c *gin.Context) {
+	delwords.DelClassic(c)
+}
