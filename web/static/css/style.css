@@ -1,0 +1,9 @@
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+}
+
+main{
+    min-height: 90vh;
+}
