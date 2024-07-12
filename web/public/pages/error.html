@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .title }}</title>
+  <link rel="shortcut icon" href="{{ .favicon }}" type="image/x-icon">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="//unpkg.com/alpinejs" defer></script>
+
+</head>
+<body>
+  {{ template "header.html" .}}
+  </main>
+  <div class="grid h-[90vh] place-content-center bg-white px-4">
+    <div class="text-center">
+      <h1 class="text-9xl font-black text-gray-200">404</h1>
+  
+      <p class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ой-ой!</p>
+  
+      <p class="mt-4 text-gray-500">Такая страница не найдена.</p>
+  
+      <a
+        href="/"
+        class="mt-6 inline-block rounded bg-indigo-600 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring"
+      >
+        На главную
+      </a>
+    </div>
+  </div>
+  <div class="cookie" id="cookie" style="display: none;">
+    {{ template "cookie.html" .}}
+
+    <script src="static/js/cookieRemove.js"></script>
+  </div>
+  {{ template "footer.html" .}}
+
+
+</body>
+</html>
