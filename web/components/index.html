@@ -6,11 +6,13 @@
   <title>{{ .title }}</title>
   <link rel="shortcut icon" href="{{ .favicon }}" type="image/x-icon">
   <link rel="stylesheet" href="/static/css/style.css">
+  <script src="//unpkg.com/alpinejs" defer></script>
+
 </head>
 <body>
   {{ template "header.html" .}}
   <main>
-    <section x-data="{ isOpen: false }" class="w-full min-h-[90vh] bg-white dark:bg-gray-900">
+    <section x-data="{ open: true, darkMode: false }" class="w-full min-h-[90vh] bg-white dark:bg-gray-900 dark">
       <div class="container relative flex flex-col min-h-[90vh] px-6 py-8 mx-auto">
           
           <section class="flex items-center flex-1">
@@ -43,8 +45,13 @@
       </div>
   </section>
   </main>
+  <div class="cookie" id="cookie" style="display: none;">
+    {{ template "cookie.html" .}}
 
+    <script src="static/js/cookieRemove.js"></script>
+  </div>
   {{ template "footer.html" .}}
+
 
 </body>
 </html>
