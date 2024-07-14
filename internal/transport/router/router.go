@@ -9,15 +9,20 @@ import (
 
 func SetupRouter(h *handler.Handler) *gin.Engine {
 	router := gin.New()
+
 	router.LoadHTMLGlob("web/public/*/*")
-
-	router.GET("/", h.HomePage)
-	router.Static("/static", "web/static")
-
 	router.NoRoute(func(c *gin.Context) {
 		c.HTML(http.StatusNotFound, "error.html", nil)
 	})
 
+	router.Static("/static", "web/static")
+	// router.GET("/", h.HomePage)
+
+	pagesWords := router.Group("/")
+	{
+		pagesWords.GET("/", h.HomePage)
+		pagesWords.GET("/words", h.WordsPage)
+	}
 	addWordsApi := router.Group("/newWords")
 	{
 		addWordsApi.POST("/classic", h.ClassicAddWords)
