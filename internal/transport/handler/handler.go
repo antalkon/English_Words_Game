@@ -4,7 +4,7 @@ import (
 	addwords "github.com/antalkon/English_Words_Game/internal/services/AddWords"
 	delwords "github.com/antalkon/English_Words_Game/internal/services/delWords"
 	getwords "github.com/antalkon/English_Words_Game/internal/services/getWords"
-	"github.com/antalkon/English_Words_Game/internal/services/homepage"
+	"github.com/antalkon/English_Words_Game/internal/services/pages"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,7 +15,10 @@ func NewHandler() *Handler {
 }
 
 func (h *Handler) HomePage(c *gin.Context) {
-	homepage.HomePageLoad(c)
+	pages.HomePageLoad(c)
+}
+func (h *Handler) WordsPage(c *gin.Context) {
+	pages.WordsPageLoad(c)
 }
 
 func (h *Handler) ClassicAddWords(c *gin.Context) {

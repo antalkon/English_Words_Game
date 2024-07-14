@@ -1,7 +1,14 @@
 package pages
 
-import "github.com/gin-gonic/gin"
+import (
+	"net/http"
 
-func HomePage(c *gin.Context) {
+	"github.com/gin-gonic/gin"
+)
 
+func HomePageLoad(c *gin.Context) {
+	c.HTML(http.StatusOK, "index.html", gin.H{
+		"title":   "Зентас English",
+		"favicon": "static/img/favicon.ico",
+	})
 }
