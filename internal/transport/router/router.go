@@ -37,6 +37,14 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 		getWordsApi.POST("/classic", h.GetClassicWords)
 		getWordsApi.POST("/classic/set/:test", h.GetClassicSet)
 	}
+
+	API := router.Group("api")
+	{
+		v1 := API.Group("v1")
+		{
+			v1.POST("/email/pending", h.AddPendingEmail)
+		}
+	}
 	return router
 
 }
