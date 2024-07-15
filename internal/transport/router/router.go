@@ -22,6 +22,8 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 	{
 		pagesWords.GET("/", h.HomePage)
 		pagesWords.GET("/words", h.WordsPage)
+		pagesWords.GET("/words/game", h.WordsGamePage)
+
 	}
 	addWordsApi := router.Group("/newWords")
 	{
