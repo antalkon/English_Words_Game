@@ -21,6 +21,9 @@ func (h *Handler) HomePage(c *gin.Context) {
 func (h *Handler) WordsPage(c *gin.Context) {
 	pages.WordsPageLoad(c)
 }
+func (h *Handler) WordsGamePage(c *gin.Context) {
+	pages.WordsPageGame(c)
+}
 
 func (h *Handler) ClassicAddWords(c *gin.Context) {
 	addwords.AddClassicWords(c)
