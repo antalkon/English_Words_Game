@@ -1,4 +1,6 @@
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+
 {{ template "modals.html" .}}
 
 <header class="bg-white fixed">
@@ -51,10 +53,10 @@
               href="#"
             > -->
             <a
-            onclick="login_and_reg.showModal()"
-            class="block rounded-md bg-sky-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-sky-400"
-            href="#"
-          >
+              onclick="document.getElementById('loginZentasNotifyModal').showModal()"
+              class="block rounded-md bg-sky-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-sky-400"
+              href="#"
+            >
               Вход
             </a>
   
