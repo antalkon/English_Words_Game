@@ -5,6 +5,10 @@ import (
 	"github.com/antalkon/English_Words_Game/internal/services/api"
 	delwords "github.com/antalkon/English_Words_Game/internal/services/delWords"
 	getwords "github.com/antalkon/English_Words_Game/internal/services/getWords"
+	oauthapi "github.com/antalkon/English_Words_Game/internal/services/oauthApi"
+
+	// ouathapi "github.com/antalkon/English_Words_Game/internal/services/oauthApi"
+
 	"github.com/antalkon/English_Words_Game/internal/services/pages"
 	"github.com/gin-gonic/gin"
 )
@@ -49,9 +53,10 @@ func (h *Handler) DelSet(c *gin.Context) {
 func (h *Handler) ClassicDelWords(c *gin.Context) {
 	delwords.DelClassic(c)
 }
+
 func (h *Handler) AddPendingEmail(c *gin.Context) {
 	api.PnadingEmail(c)
 }
-func (h *Handler) AddPendingEmail(c *gin.Context) {
-	api.PnadingEmail(c)
+func (h *Handler) ParseOauthLink(c *gin.Context) {
+	oauthapi.ParseLoginLink(c)
 }

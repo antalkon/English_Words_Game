@@ -38,11 +38,17 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 		getWordsApi.POST("/classic/set/:test", h.GetClassicSet)
 	}
 
-	API := router.Group("api")
+	auth := router.Group("/auth")
 	{
-		v1 := API.Group("v1")
+		authApi := auth.Group("/api")
 		{
-			v1.POST("/email/pending", h.AddPendingEmail)
+			authApi_v1 := authApi.Group("/v1")
+			{
+				OAuth := authApi_v1.Group("/OAuth")
+				{
+					OAuth.GET("/link", h.ParseOauthLink)
+				}
+			}
 		}
 	}
 	API := router.Group("api")
