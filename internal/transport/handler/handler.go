@@ -52,3 +52,6 @@ func (h *Handler) ClassicDelWords(c *gin.Context) {
 func (h *Handler) AddPendingEmail(c *gin.Context) {
 	api.PnadingEmail(c)
 }
+func (h *Handler) AddPendingEmail(c *gin.Context) {
+	api.PnadingEmail(c)
+}

@@ -45,6 +45,13 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 			v1.POST("/email/pending", h.AddPendingEmail)
 		}
 	}
+	API := router.Group("api")
+	{
+		v1 := API.Group("v1")
+		{
+			v1.POST("/email/pending", h.AddPendingEmail)
+		}
+	}
 	return router
 
 }
