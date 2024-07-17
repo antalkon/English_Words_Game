@@ -7,7 +7,7 @@ import (
 )
 
 type TokenRefreshClaims struct {
-	ID      string `json:"userDisplay"`
+	ID      string `json:"userId"`
 	Email   string `json:"userEmail"`
 	Phone   string `json:"userPhone"`
 	Name    string `json:"userName"`
