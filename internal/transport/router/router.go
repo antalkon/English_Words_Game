@@ -39,6 +39,19 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 		getWordsApi.POST("/classic", h.GetClassicWords)
 		getWordsApi.POST("/classic/set/:test", h.GetClassicSet)
 	}
+	auth := router.Group("/auth")
+	{
+		authApi := auth.Group("/api")
+		{
+			authApi_v1 := authApi.Group("/v1")
+			{
+				OAuth := authApi_v1.Group("/OAuth")
+				{
+					OAuth.GET("/link", h.ParseOauthLink)
+				}
+			}
+		}
+	}
 	return router
 
 }

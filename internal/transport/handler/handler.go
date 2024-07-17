@@ -4,6 +4,7 @@ import (
 	addwords "github.com/antalkon/English_Words_Game/internal/services/AddWords"
 	delwords "github.com/antalkon/English_Words_Game/internal/services/delWords"
 	getwords "github.com/antalkon/English_Words_Game/internal/services/getWords"
+	ouathapi "github.com/antalkon/English_Words_Game/internal/services/ouathApi"
 	"github.com/antalkon/English_Words_Game/internal/services/pages"
 	"github.com/gin-gonic/gin"
 )
@@ -50,4 +51,8 @@ func (h *Handler) DelSet(c *gin.Context) {
 
 func (h *Handler) ClassicDelWords(c *gin.Context) {
 	delwords.DelClassic(c)
+}
+
+func (h *Handler) ParseOauthLink(c *gin.Context) {
+	ouathapi.ParseLoginLink(c)
 }
