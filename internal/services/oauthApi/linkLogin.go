@@ -44,7 +44,6 @@ func ParseLoginLink(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"id":    userData.ID,
-		"email": userData.Email,
+		"sues": userData.ID,
 	})
 }
