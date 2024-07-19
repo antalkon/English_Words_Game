@@ -12,6 +12,8 @@ import (
 
 func ParseLoginLink(c *gin.Context) {
 	token := c.Query("q")
+	refresh := c.Query("refresh")
+
 	userData, err := jwt.DecodeRefreshToken(token)
 	if err != nil {
 		fmt.Println(err)
@@ -42,6 +44,15 @@ func ParseLoginLink(c *gin.Context) {
 			return
 		}
 	}
+
+	authTokens, err := jwt.CreateAauth(userData.ID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err})
+		return
+	}
+
+	c.SetCookie("access_token", authTokens, 24*60*60*24, "/", "localhost:8080", false, true)
+	c.SetCookie("zentasId_refresh", refresh, 24*60*60*365, "/", "localhost:8080", false, true)
 
 	c.JSON(http.StatusOK, gin.H{
 		"sues": userData.ID,
