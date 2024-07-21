@@ -6,6 +6,7 @@ import (
 	delwords "github.com/antalkon/English_Words_Game/internal/services/delWords"
 	getwords "github.com/antalkon/English_Words_Game/internal/services/getWords"
 	oauthapi "github.com/antalkon/English_Words_Game/internal/services/oauthApi"
+	userdata "github.com/antalkon/English_Words_Game/internal/services/userData"
 
 	// ouathapi "github.com/antalkon/English_Words_Game/internal/services/oauthApi"
 
@@ -62,4 +63,11 @@ func (h *Handler) AddPendingEmail(c *gin.Context) {
 }
 func (h *Handler) ParseOauthLink(c *gin.Context) {
 	oauthapi.ParseLoginLink(c)
+}
+func (h *Handler) UserInfoRedirect(c *gin.Context) {
+	oauthapi.UserInfoRedirect(c)
+}
+
+func (h *Handler) UserData(c *gin.Context) {
+	userdata.UserData(c)
 }

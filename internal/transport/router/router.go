@@ -49,6 +49,10 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 				OAuth := authApi_v1.Group("/OAuth")
 				{
 					OAuth.GET("/link", h.ParseOauthLink)
+					OAuth_data := OAuth.Group("/data")
+					{
+						OAuth_data.GET("/userInfo", h.UserInfoRedirect)
+					}
 				}
 			}
 		}
@@ -58,6 +62,7 @@ func SetupRouter(h *handler.Handler) *gin.Engine {
 		v1 := API.Group("v1")
 		{
 			v1.POST("/email/pending", h.AddPendingEmail)
+			v1.POST("/data/user", h.UserData)
 		}
 	}
 	return router
