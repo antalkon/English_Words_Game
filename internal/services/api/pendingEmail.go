@@ -27,5 +27,5 @@ func PnadingEmail(c *gin.Context) {
 		return
 	}
 	_ = db
-	c.JSON(http.StatusOK, gin.H{"suesses": "Вы подписаны на рассылку!"})
+	c.JSON(http.StatusOK, gin.H{"message": "Вы подписаны на рассылку!"})
 }
