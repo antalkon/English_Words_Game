@@ -12,18 +12,18 @@ import (
 func PnadingEmail(c *gin.Context) {
 	UUID, err := UUID.GenerateWordID()
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error(), "message": "Не удолось выпустить ID."})
 		return
 	}
 	var pending models.PendingEmail
 	if err := c.ShouldBindJSON(&pending); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error(), "message": "Не удалось обработать данные."})
 		return
 	}
 	pending.Id = UUID
 	db, err := apipg.PendingDB(pending)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error(), "message": "Вы уже подписаны."})
 		return
 	}
 	_ = db
