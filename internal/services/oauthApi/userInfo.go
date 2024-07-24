@@ -9,7 +9,7 @@ import (
 )
 
 func UserInfoRedirect(c *gin.Context) {
-	cookie, err := c.Cookie("access_token")
+	cookie, err := c.Cookie("access_token_app")
 	if err != nil {
 		c.Redirect(http.StatusMovedPermanently, "")
 		return
