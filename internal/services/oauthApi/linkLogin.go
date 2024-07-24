@@ -51,10 +51,9 @@ func ParseLoginLink(c *gin.Context) {
 		return
 	}
 
-	c.SetCookie("access_token", authTokens, 24*60*60*24, "/", "localhost:8080", false, true)
-	c.SetCookie("zentasId_refresh", refresh, 24*60*60*365, "/", "localhost:8080", false, true)
-
-	c.JSON(http.StatusOK, gin.H{
-		"sues": userData.ID,
-	})
+	c.SetCookie("access_token_app", authTokens, 24*60*60*24, "/", "localhost", false, true)
+	c.SetCookie("zentasId_refresh", refresh, 24*60*60*365, "/", "localhost", false, true)
+	// time.Sleep(3 * time.Second)
+	// c.Redirect(http.StatusMovedPermanently, "/")
+	c.JSON(http.StatusOK, gin.H{"su": ""})
 }
